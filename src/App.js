@@ -21,8 +21,7 @@ class App extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    const contacts = [
-      ...this.state.contacts,
+    const info = [
       this.state.name,
       this.state.email,
       this.state.phone,
@@ -31,6 +30,7 @@ class App extends Component {
       this.state.state,
       this.state.zip
     ];
+    const contacts = [...this.state.contacts, info];
     this.setState({
       contacts,
       name: "",
