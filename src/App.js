@@ -9,14 +9,38 @@ class App extends Component {
     super(props);
     this.state = {
       contacts: [],
-      newContact: ""
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      city: "",
+      state: "",
+      zip: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(e) {
     e.preventDefault();
-    const contacts = [...this.state.contacts, this.state.newContact];
-    this.setState({ contacts, newContact: "" });
+    const contacts = [
+      ...this.state.contacts,
+      this.state.name,
+      this.state.email,
+      this.state.phone,
+      this.state.address,
+      this.state.city,
+      this.state.state,
+      this.state.zip
+    ];
+    this.setState({
+      contacts,
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      city: "",
+      state: "",
+      zip: ""
+    });
   }
   render() {
     const { newContact } = this.state;
