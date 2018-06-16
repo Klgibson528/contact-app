@@ -16,12 +16,5 @@ function Contact(props) {
   );
 }
 
-// function ContactList(props) {
-//     return (
-
-//         <ol>{props.contacts}</ol>
-
-//     );
-//   }
 
 export default Contact;
