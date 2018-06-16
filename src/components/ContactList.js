@@ -16,12 +16,12 @@ function Contact(props) {
   );
 }
 
-function ContactList(props) {
-    return (
-      <div className="contact-list">
-        <ol>{props.contacts}</ol>
-      </div>
-    );
-  }
+// function ContactList(props) {
+//     return (
 
-export default ContactList;
+//         <ol>{props.contacts}</ol>
+
+//     );
+//   }
+
+export default Contact;

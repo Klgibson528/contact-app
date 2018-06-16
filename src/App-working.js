@@ -1,6 +1,22 @@
 import React, { Component } from "react";
-import ContactList from "./ContactList.js";
+
 import "./App.css";
+
+function Contact(props) {
+  return (
+    <li className="single-contact">
+      <div>
+        <h4>{props.contactInfo.name}</h4>
+        <h6>Email: {props.contactInfo.email}</h6>
+        <h6>Phone Number: {props.contactInfo.phone}</h6>
+        <h6>Address: {props.contactInfo.address}</h6>
+        <h6>City: {props.contactInfo.city}</h6>
+        <h6>State: {props.contactInfo.state}</h6>
+        <h6>Zip Code: {props.contactInfo.zip}</h6>
+      </div>
+    </li>
+  );
+}
 
 class App extends Component {
   constructor(props) {
@@ -46,7 +62,7 @@ class App extends Component {
     var contacts = [];
     if (this.state.contacts.length) {
       contacts = this.state.contacts.map((contact, index) => {
-        return <ContactList key={"contact_" + index} contactInfo={contact} />;
+        return <Contact key={"contact_" + index} contactInfo={contact} />;
       });
     }
     console.log(contacts);
@@ -142,7 +158,9 @@ class App extends Component {
             </div>
           </form>
         </div>
-        <ContactList contacts={contacts} />
+        <div className="contact-list">
+          <ol>{contacts}</ol>
+        </div>
       </div>
     );
   }

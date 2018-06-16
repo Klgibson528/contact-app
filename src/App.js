@@ -1,22 +1,7 @@
 import React, { Component } from "react";
-
+import Contact from "./components/ContactList";
+import NavBar from "./components/NavBar.js";
 import "./App.css";
-
-function Contact(props) {
-  return (
-    <li className="single-contact">
-      <div>
-        <h4>{props.contactInfo.name}</h4>
-        <h6>Email: {props.contactInfo.email}</h6>
-        <h6>Phone Number: {props.contactInfo.phone}</h6>
-        <h6>Address: {props.contactInfo.address}</h6>
-        <h6>City: {props.contactInfo.city}</h6>
-        <h6>State: {props.contactInfo.state}</h6>
-        <h6>Zip Code: {props.contactInfo.zip}</h6>
-      </div>
-    </li>
-  );
-}
 
 class App extends Component {
   constructor(props) {
@@ -69,10 +54,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="App-header navbar-dark bg-primary">
-          <h1>Contact List</h1>
-        </header>
-        <div className="contact">
+        <NavBar />
+        <div className="contact container-fluid">
           <form onSubmit={this.handleSubmit}>
             <div className="inputs">
               Name:
